@@ -13,29 +13,13 @@ const app = express();
 app.use(express.json());
 app.use(clerkMiddleware());
 
-app.use("/api/inngest", serve({ client:inngest, functions }));
+app.use("/api/inngest", serve({ client: inngest, functions }));
 
-app.get("/",(req, res)=>{
-    res.send("hello world");
+app.get("/", (req, res) => {
+  res.send("hello world");
 });
 
-const startServer = async() => {
-    try{
-        await connectDB();
-        if(ENV.NODE_ENV !== "production"){
-            console.log("db connected & env.js completed");
-            app.listen(ENV.PORT, ()=>
-    { 
-    console.log("Server started at port: ", ENV.PORT);
-    }
-);
-        }
-    }catch (error){
-        console.error("error starting: ", error);
-        process.exit(1);
-    }
-};
-
-startServer();
+// Connect DB without starting a server
+await connectDB();
 
 export default app;
