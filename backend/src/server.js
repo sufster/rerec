@@ -13,26 +13,29 @@ const app = express();
 app.use(express.json());
 app.use(clerkMiddleware());
 
-app.use("/api/inngest", serve({ client:inngest, functions }));
+app.use("/api/inngest", serve({ client: inngest, functions }));
 
-app.get("/",(req, res)=>{
-    res.send("hello world");
+app.get("/", (req, res) => {
+  res.send("hello world");
 });
 
 const startServer = async () => {
   try {
     await connectDB();
-    if (ENV.NODE_ENV !== "production") {
-      app.listen(ENV.PORT, () => {
-        console.log("Server started on port:", ENV.PORT);
-      });
-    }
+
+    app.listen(ENV.PORT, () => {
+      console.log("Server started on port:", ENV.PORT);
+    });
+
   } catch (error) {
     console.error("Error starting server:", error);
-    process.exit(1); // Exit the process with a failure code
+    process.exit(1);
   }
 };
 
-startServer();
+// ONLY run locally
+if (ENV.NODE_ENV !== "production") {
+  startServer();
+}
 
 export default app;
