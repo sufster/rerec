@@ -5,7 +5,6 @@ import { setServers } from "node:dns/promises";
 import { clerkMiddleware } from "@clerk/express";
 import { functions, inngest } from "./config/inngest.js";
 import { serve } from "inngest/express";
-import { err } from "inngest/types";
 
 setServers(["1.1.1.1", "8.8.8.8"]);
 
