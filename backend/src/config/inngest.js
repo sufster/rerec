@@ -14,34 +14,25 @@ const syncUser = inngest.createFunction(
 
     const { id, email_addresses, first_name, last_name, image_url } = event.data;
 
-    if (!id) {
-      console.error("Clerk event missing ID:", event.data);
-      return;
-    }
-
     const newUser = {
       clerkId: id,
-      email: email_addresses?.[0]?.email_address,
-      name: `${first_name || ""} ${last_name || ""}`.trim(),
+      email: email_addresses[0]?.email_address,
+      name: `${first_name || ""} ${last_name || ""}`,
       image: image_url,
     };
 
-    // Upsert to prevent duplicates
-    await User.updateOne(
-      { clerkId: id },
-      { $set: newUser },
-      { upsert: true }
-    );
+    await User.create(newUser);
 
     await upsertStreamUser({
-      id: id.toString(),
+      id: newUser.clerkId.toString(),
       name: newUser.name,
       image: newUser.image,
     });
 
-    await addUserToPublicChannels(id.toString());
+    await addUserToPublicChannels(newUser.clerkId.toString());
   }
 );
+
 const deleteUserFromDB = inngest.createFunction(
   { id: "delete-user-from-db" },
   { event: "clerk/user.deleted" },
