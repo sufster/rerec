@@ -5,7 +5,7 @@ const HomePage = () => {
     <>
       <header>
         <Show when="signed-in">
-          <UserButton/>
+          <UserButton/>HomePage
         </Show>
       </header>
     </>
