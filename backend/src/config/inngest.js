@@ -7,7 +7,7 @@ import { addUserToPublicChannels, deleteStreamUser, upsertStreamUser } from "./s
 export const inngest = new Inngest({ id: "slack-clone" });
 
 const syncUser = inngest.createFunction(
-  { id: "rewired-sync-user" },
+  { id: "sync-user" },
   { event: "clerk/user.created" },
   async ({ event }) => {
     await connectDB();
