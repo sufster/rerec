@@ -10,16 +10,16 @@ const AuthPage = () => {
         <div className="auth-hero">
           <div className="brand-container">
             <img src="..\logo-re.png" alt="Rewired Recovery" className='brand-logo'/>
-            <span className='brand-name'>Rewired Recovery</span>
+            <span className='brand-name'>KIZUNA</span>
           </div>
-            <h1 className='hero-title'>Reconnect. Recover. Rewire.</h1>
+            <h1 className='hero-title'>Chat. Share. Connect.</h1>
             <p className='hero-subtitle'>
-              Rewired Recovery — a safe space to connect, heal, and support each other through addiction and mental health challenges.
+              Kizuna — Connect Beyond Words, Heal Together, and Find Your Community.
             </p>
             <div className="features-list">
               <div className="feature-item">
-                <span className='feature-icon'>🎯</span>
-                <span>Goal Setting & Reminders</span>
+                <span className='feature-icon'>📹</span>
+                <span>Video Calling</span>
               </div>
 
               <div className="feature-item">
@@ -28,8 +28,8 @@ const AuthPage = () => {
               </div>
 
               <div className="feature-item">
-                <span className='feature-icon'>📅</span>
-                <span>Daily Check-Ins</span>
+                <span className='feature-icon'>🛰️</span>
+                <span>Join servers from anywhere</span>
               </div>
 
             </div>

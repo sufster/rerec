@@ -3,20 +3,29 @@
   display: flex;
 background: linear-gradient(
   125deg,
-  #ff9966 0%,
-  #ff5e62 30%,
-  #ff9a9e 60%,
-  #fbc2eb 85%,
-  #F2E9EA 100%
+  #2f2f2f 0%,
+  #2c2525 30%,
+  #3b3838 65%,
+  #bfbfbf 100%
 ),
 radial-gradient(
   ellipse at top left,
-  rgba(255, 120, 100, 0.4) 0%,
+  rgba(255, 255, 255, 0.08) 0%,
   transparent 60%
 ),
 radial-gradient(
   ellipse at bottom right,
-  rgba(255, 180, 150, 0.3) 0%,
+  rgba(51, 43, 43, 0.705) 0%,
+  transparent 60%
+);
+radial-gradient(
+  ellipse at top left,
+  rgba(156, 175, 136, 0.45) 0%,
+  transparent 60%
+),
+radial-gradient(
+  ellipse at bottom right,
+  rgba(156, 175, 136, 0.35) 0%,
   transparent 60%
 );
   position: relative;
@@ -154,39 +163,34 @@ radial-gradient(
 }
 
 .cta-button {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-
   background: linear-gradient(
     135deg,
-    #ffb88c 0%,   /* warm orange */
-    #ff8a8a 40%,  /* soft coral */
-    #fbc2eb 75%,  /* pink */
-    #F2E9EA 100%  /* light cream */
+    #1f1f1f 0%,
+    #2a2a2a 40%,
+    #3a3a3a 75%,
+    #555555 100%
   );
 
-  color: #2d2d2d;
+  color: #f5f5f5;
   font-size: 1.125rem;
   font-weight: 600;
 
   padding: 1.25rem 2.5rem;
   border-radius: 1rem;
 
-  border: 1px solid rgba(255, 160, 122, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   box-shadow:
-    0 20px 40px rgba(255, 140, 120, 0.25),
-    0 8px 20px rgba(255, 180, 150, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(15px);
-
 }
 
 .cta-button::before {
@@ -200,15 +204,11 @@ radial-gradient(
   background: linear-gradient(
     45deg,
     transparent,
-    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.25),
     transparent
   );
 
   transition: all 0.6s ease;
-}
-
-.cta-button:hover::before {
-  left: 100%;
 }
 
 .cta-button:hover {

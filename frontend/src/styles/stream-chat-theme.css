@@ -20,25 +20,11 @@
 
 .chat-wrapper {
   min-height: 100vh;
-  background: 
-    linear-gradient(
-      180deg,
-      #000000 0%,     /* pure black top */
-      #1c0a27 25%,    /* very dark purple */
-      #2d0b2e 50%,    /* dark purple mid */
-      #1c0a27 75%,    /* dark purple again */
-      #350d36 100%    /* slightly brighter purple bottom */
-    ),
-    linear-gradient(
-      45deg,
-      rgba(24, 7, 53, 0.25) 0%,   /* subtle overlay highlights */
-      rgba(74, 21, 75, 0.35) 30%,
-      rgba(114, 9, 183, 0.25) 60%,
-      rgba(83, 52, 131, 0.2) 100%
-    );
+  background: #1e1f22; /* soft dark gray (Discord-like) */
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  color: #e3e5e8; /* soft off-white text */
 }
 
 .chat-wrapper::before {
@@ -410,30 +396,10 @@
   height: 100%;
   position: relative;
   z-index: 1;
-  background: 
-    linear-gradient(
-      180deg,
-      #000000 0%,     /* pure black top */
-      #1c0a27 25%,    /* very dark purple */
-      #2d0b2e 50%,    /* dark purple mid */
-      #1c0a27 75%,    /* dark purple again */
-      #350d36 100%    /* slightly brighter purple bottom */
-    ),
-    linear-gradient(
-      45deg,
-      rgba(24, 7, 53, 0.25) 0%,   /* subtle overlay highlights */
-      rgba(74, 21, 75, 0.35) 30%,
-      rgba(114, 9, 183, 0.25) 60%,
-      rgba(83, 52, 131, 0.2) 100%
-    );
-  background-blend-mode: overlay;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #18191c; /* deep black-gray */
   display: flex;
   flex-direction: column;
-  color: #e0d9f0; /* soft text color for contrast */
-  display: flex;
-  flex-direction: column;
+  color: #e3e5e8; /* soft readable text */
 }
 
 .team-channel-list::before {
